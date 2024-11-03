@@ -1,0 +1,97 @@
+/* register.css */
+
+@import url('theme.css');
+
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background: var(--background-color);
+}
+
+.register-card {
+    background: var(--white-color);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px var(--shadow-color);
+    transition: box-shadow var(--transition-speed);
+}
+
+.register-card:hover {
+    box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+form input[type="email"],
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    transition: border-color var(--transition-speed);
+}
+
+form input[type="email"]:focus,
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+form button:hover {
+    background: #003366;
+}
+
+a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+a:hover {
+    color: #b71c1c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .register-card {
+        padding: 20px;
+    }
+}

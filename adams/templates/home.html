@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams junior Acxademy </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+<!-- Hero Section -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Adams Junior School Management System</h1>
+        <p>Your gateway to seamless student fee management and invoicing.</p>
+        <div class="hero-buttons">
+            <a href="/register" class="button primary">Get Started</a>
+            <a href="/login" class="button secondary">Login</a>
+        </div>
+    </div>
+</header>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="feature">
+        <div class="feature-icon">
+            <img src="{{ url_for('static', filename='images/fee_calculation_icon.svg') }}" alt="Fee Calculation Icon">
+        </div>
+        <h2>Easy Fee Calculation</h2>
+        <p>Effortlessly calculate tuition and optional fees for each student with just a few clicks.</p>
+        <a href="/fee_calculator" class="button tertiary">Calculate Fees</a>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">
+            <img src="{{ url_for('static', filename='images/invoice_icon.svg') }}" alt="Invoice Icon">
+        </div>
+        <h2>Generate Invoices Instantly</h2>
+        <p>Create clear and printable invoices for each term's fees and services.</p>
+        <a href="/invoice" class="button tertiary">Generate Invoice</a>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">
+            <img src="{{ url_for('static', filename='images/dashboard_icon.svg') }}" alt="Dashboard Icon">
+        </div>
+        <h2>Personalized Dashboard</h2>
+        <p>Access a dashboard to view student details, fees, and academic progress at a glance.</p>
+        <a href="/dashboard" class="button tertiary">Go to Dashboard</a>
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; {{ current_year }} Adams School. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Fee Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fee_calculator.css') }}">
+</head>
+<body>
+    <div class="calculator-container">
+    <h2>School Fee Calculator</h2>
+    <form method="post">
+        <label for="grade">Grade:</label>
+        <select name="grade" id="grade">
+            {% for grade, fee in tuition_fees.items() %}
+                <option value="{{ grade }}">{{ grade }} - Tuition Fee: {{ fee }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="term">Term:</label>
+        <select name="term" id="term">
+            <option value="1">Term 1</option>
+            <option value="2">Term 2</option>
+            <option value="3">Term 3</option>
+        </select>
+
+        <h3>Optional Fees</h3>
+        {% for item, price in optional_fees.items() %}
+            <input type="checkbox" name="{{ item }}" id="{{ item }}" value="1">
+            <label for="{{ item }}">{{ item }} - ${{ price }}</label><br>
+        {% endfor %}
+
+        <button type="submit" class="button primary">Calculate Fees</button>
+    </form>
+</div>
+
+</body>
+</html>

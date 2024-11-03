@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head><title>Invoice</title></head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/invoice.css') }}">
+<body>
+<div class="invoice-container">
+    <h2>Invoice</h2>
+    <div class="invoice-details">
+        <div class="detail">
+            <span>Grade:</span>
+            <strong>{{ grade }}</strong>
+        </div>
+        <div class="detail">
+            <span>Term:</span>
+            <strong>{{ term }}</strong>
+        </div>
+        <div class="detail">
+            <span>Total Fees:</span>
+            <strong>${{ total_fees }}</strong>
+        </div>
+    </div>
+    <button onclick="window.print()" class="button primary">Print Invoice</button>
+</div>
+
+</body>
+</html>

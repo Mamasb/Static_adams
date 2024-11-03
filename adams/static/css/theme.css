@@ -1,0 +1,20 @@
+/* theme.css */
+
+:root {
+    --primary-color: #0047ab; /* Navy blue */
+    --secondary-color: #d32f2f; /* Red */
+    --background-color: #f9f9f9; /* Light grey */
+    --white-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Arial', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

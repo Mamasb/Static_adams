@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2a6496;
+            text-align: center;
+        }
+        .invoice {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .invoice h2 {
+            color: #2a6496;
+            text-align: center;
+        }
+        .fee-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .fee-list li {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #2a6496;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #1f4a6e;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #2a6496;
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fee Calculation Invoice</h1>
+        <div class="invoice" id="invoice">
+            <h2>Invoice for {{ student_name }}</h2>
+            <h3>Grade: {{ grade }}</h3>
+            <ul class="fee-list">
+                <li><span>Base Tuition Fee</span><span>{{ tuition_fee }}</span></li>
+                {% for fee in optional_fees %}
+                    <li><span>{{ fee.item }}</span><span>{{ fee.amount }}</span></li>
+                {% endfor %}
+                <li class="total"><span>Total Fee</span><span>{{ total_fee }}</span></li>
+            </ul>
+        </div>
+        <button onclick="printInvoice()">Print Invoice</button>
+        <a href="{{ url_for('dashboard') }}">Go Back to Dashboard</a>
+    </div>
+
+    <script>
+        function printInvoice() {
+            var printContents = document.getElementById('invoice').innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>
+</html>
